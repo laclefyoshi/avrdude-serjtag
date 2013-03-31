@@ -1,0 +1,29 @@
+***************
+*** 231,243 ****
+    }
+  
+    if (is_on) {
+-     /* Clear DTR and RTS */
+-     ctl &= ~(TIOCM_DTR | TIOCM_RTS);
+-   }
+-   else {
+      /* Set DTR and RTS */
+      ctl |= (TIOCM_DTR | TIOCM_RTS);
+    }
+  
+    r = ioctl(fdp->ifd, TIOCMSET, &ctl);
+    if (r < 0) {
+--- 231,243 ----
+    }
+  
+    if (is_on) {
+      /* Set DTR and RTS */
+      ctl |= (TIOCM_DTR | TIOCM_RTS);
+    }
++   else {
++     /* Clear DTR and RTS */
++     ctl &= ~(TIOCM_DTR | TIOCM_RTS);
++   }
+  
+    r = ioctl(fdp->ifd, TIOCMSET, &ctl);
+    if (r < 0) {
