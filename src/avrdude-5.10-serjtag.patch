@@ -113,17 +113,6 @@ diff -ru avrdude-5.8/config_gram.y avrdude-5.8-serjtag/config_gram.y
    K_TYPE TKN_EQUAL K_USBASP {
      {
        usbasp_initpgm(current_prog);
-diff -ru avrdude-5.8/lexer.l avrdude-5.8-serjtag/lexer.l
---- avrdude-5.8/lexer.l	2009-03-07 05:09:11.000000000 +0900
-+++ avrdude-5.8-serjtag/lexer.l	2009-11-25 12:45:56.000000000 +0900
-@@ -120,6 +120,7 @@
- arduino          { yylval=NULL; return K_ARDUINO; }
- avr910           { yylval=NULL; return K_AVR910; }
- avr910_devcode   { yylval=NULL; return K_AVR910_DEVCODE; }
-+serjtag          { yylval=NULL; return K_SERJTAG; }
- usbasp           { yylval=NULL; return K_USBASP; }
- usbtiny          { yylval=NULL; return K_USBTINY; }
- bank_size        { yylval=NULL; return K_PAGE_SIZE; }
 diff -ru avrdude-5.8/serjtag.h avrdude-5.8-serjtag/serjtag.h
 --- avrdude-5.8/serjtag.h	2009-11-25 14:16:07.000000000 +0900
 +++ avrdude-5.8-serjtag/serjtag.h	2009-11-25 14:13:13.000000000 +0900

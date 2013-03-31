@@ -196,17 +196,6 @@ diff -ru avrdude-5.8-serjtag/ft245r.h avrdude-5.8-ft245r/ft245r.h
 +#endif
 +
 +#endif /* ft245r_h */
-diff -ru avrdude-5.8-serjtag/lexer.l avrdude-5.8-ft245r/lexer.l
---- avrdude-5.8-serjtag/lexer.l	2009-11-25 12:45:56.000000000 +0900
-+++ avrdude-5.8-ft245r/lexer.l	2009-11-25 12:49:55.000000000 +0900
-@@ -121,6 +121,7 @@
- avr910           { yylval=NULL; return K_AVR910; }
- avr910_devcode   { yylval=NULL; return K_AVR910_DEVCODE; }
- serjtag          { yylval=NULL; return K_SERJTAG; }
-+ft245r           { yylval=NULL; return K_FT245R; }
- usbasp           { yylval=NULL; return K_USBASP; }
- usbtiny          { yylval=NULL; return K_USBTINY; }
- bank_size        { yylval=NULL; return K_PAGE_SIZE; }
 diff -ru avrdude-5.8-serjtag/ft245r.c avrdude-5.8-ft245r/ft245r.c
 --- avrdude-5.10-base/ft245r.c	Tue Jun 14 21:50:11 2011
 +++ avrdude-5.10/ft245r.c	Sat Jun 25 06:39:31 2011
