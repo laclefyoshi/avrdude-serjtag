@@ -1,0 +1,10 @@
+--- avrdude-5.11-serjtag/lexer.l	2013-03-30 15:24:25.000000000 +0900
++++ avrdude-5.11-ft245r/lexer.l	2013-03-30 15:24:59.000000000 +0900
+@@ -121,6 +121,7 @@
+ avr910           { yylval=NULL; return K_AVR910; }
+ avr910_devcode   { yylval=NULL; return K_AVR910_DEVCODE; }
+ serjtag          { yylval=NULL; return K_SERJTAG; }
++ft245r           { yylval=NULL; return K_FT245R; }
+ avrftdi          { yylval=NULL; return K_AVRFTDI; }
+ usbasp           { yylval=NULL; return K_USBASP; }
+ usbtiny          { yylval=NULL; return K_USBTINY; }
