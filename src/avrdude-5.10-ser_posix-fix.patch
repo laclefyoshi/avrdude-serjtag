@@ -1,0 +1,21 @@
+diff -ru avrdude-5.10-base/ser_posix.c avrdude-5.10/ser_posix.c
+--- avrdude-5.10-base/ser_posix.c	2011-01-06 17:24:01.000000000 +0900
++++ avrdude-5.10/ser_posix.c	2011-01-06 17:24:36.000000000 +0900
+@@ -231,13 +231,13 @@
+   }
+ 
+   if (is_on) {
+-    /* Clear DTR and RTS */
+-    ctl &= ~(TIOCM_DTR | TIOCM_RTS);
+-  }
+-  else {
+     /* Set DTR and RTS */
+     ctl |= (TIOCM_DTR | TIOCM_RTS);
+   }
++  else {
++    /* Clear DTR and RTS */
++    ctl &= ~(TIOCM_DTR | TIOCM_RTS);
++  }
+ 
+   r = ioctl(fdp->ifd, TIOCMSET, &ctl);
+   if (r < 0) {

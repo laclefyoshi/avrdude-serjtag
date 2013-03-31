@@ -1,0 +1,33 @@
+diff -ru avrdude-5.8/ser_posix.c avrdude-5.8-baud/ser_posix.c
+--- avrdude-5.8/ser_posix.c	2009-07-02 19:31:14.000000000 +0900
++++ avrdude-5.8-baud/ser_posix.c	2009-11-25 11:17:10.000000000 +0900
+@@ -64,6 +64,7 @@
+   { 57600,  B57600 },
+   { 115200, B115200 },
+   { 230400, B230400 },
++  { 3000000, B3000000 },
+   { 0,      0 }                 /* Terminator. */
+ };
+ 
+Only in avrdude-5.8-baud: ser_posix.c.orig
+diff -ru avrdude-5.8/ser_win32.c avrdude-5.8-baud/ser_win32.c
+--- avrdude-5.8/ser_win32.c	2009-07-02 19:23:57.000000000 +0900
++++ avrdude-5.8-baud/ser_win32.c	2009-11-25 11:17:10.000000000 +0900
+@@ -46,6 +46,7 @@
+ /* HANDLE hComPort=INVALID_HANDLE_VALUE; */
+ 
+ static struct baud_mapping baud_lookup_table [] = {
++#define CBR_3000000	3000000
+   { 1200,   CBR_1200 },
+   { 2400,   CBR_2400 },
+   { 4800,   CBR_4800 },
+@@ -54,6 +55,9 @@
+   { 38400,  CBR_38400 },
+   { 57600,  CBR_57600 },
+   { 115200, CBR_115200 },
++#ifdef CBR_3000000
++  { 3000000, CBR_3000000 },
++#endif
+   { 0,      0 }                 /* Terminator. */
+ };
+ 

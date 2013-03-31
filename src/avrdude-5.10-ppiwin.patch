@@ -1,0 +1,10 @@
+--- avrdude-5.10-base/ppiwin.c	Sat Jun 18 19:49:50 2011
++++ avrdude-5.10/ppiwin.c	Sat Jun 18 19:50:45 2011
+@@ -386,6 +386,7 @@
+ 	// with my test-hardware maybe in the code-base.
+ 	//// us=(unsigned long) (us*1.5);	
+ 
++	SetThreadAffinityMask( GetCurrentThread(), 1 );
+ 	has_highperf=QueryPerformanceFrequency(&freq);
+ 
+ 	//has_highperf=0; // debug
