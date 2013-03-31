@@ -37,3 +37,5 @@ check
         /usr/lib/libncurses.5.4.dylib (compatibility version 5.4.0, current version 5.4.0)
         /usr/local/lib/libftd2xx.1.2.2.dylib (compatibility version 0.1.0, current version 1.2.2)
 
+Please read README of original avrdude-serjtag for using serjtag and FT232R/FT245R.
+
